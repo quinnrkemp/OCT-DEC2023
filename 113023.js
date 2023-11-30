@@ -1,0 +1,49 @@
+    // CHALLENGE NAME-  Enumerable Magic #1 - True for All?
+
+    // DESCRIPTION:
+
+//     Task
+//     Create a method all which takes two params:
+    
+//     a sequence
+//     a function (function pointer in C)
+//     and returns true if the function in the params returns true for every 
+//     element in the sequence. Otherwise, it should return false. If the 
+//     sequence is empty, it should return true, since technically nothing 
+//     failed the test.
+
+//     Example
+// all((1, 2, 3, 4, 5), greater_than_9) -> false
+// all((1, 2, 3, 4, 5), less_than_9)    -> True
+
+//     // ***STARTER CODE***
+
+//     function all( arr, fun ){
+//         // ...
+//       }  
+
+//     //   ******TEST CASES*****
+    
+//     describe("Tests", () => {
+//         it("test", () => {
+//       Test.assertEquals(all([1,2,3,4,5], function(v){return v<9}), true)
+//       Test.assertEquals(all([1,2,3,4,5], function(v){return v>9}), false)
+      
+//         });
+//       });
+
+    // ******MY ANSWER********
+
+    function all( arr, fun ){
+        let array = [];
+          for(let i=0; i< arr.length; i++){
+            if(fun(arr[i])){
+              array.push(arr[i])
+            }
+          }
+          if(arr.length === array.length){
+            return true
+          }
+        
+          return false;
+        }
